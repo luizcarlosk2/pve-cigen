@@ -7,7 +7,9 @@ pve-cigen (Proxmox VE Cloud Init Generator) is a script to create VM's based wit
 just clone this repository, change the permission execution of pve-cigen file.
 
 ```bash
-Just git clone and change the pve-cigen permission
+git clone https://github.com/luizcarlosk2/pve-cigen.git
+chmod 0755 pve-cigen/pve-cigen.sh
+echo "alias pve-cigen=$(echo "$PWD""/pve-cigen/./pve-cigen.sh")" >> ~/.bashrc # or .zshrc
 ```
 
 ## Usage
