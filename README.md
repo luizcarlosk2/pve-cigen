@@ -4,12 +4,25 @@ pve-cigen (Proxmox VE Cloud Init Generator) is a script to create VM's based wit
 
 ## Installation
 
-just clone this repository, change the permission execution of pve-cigen file.
+Just clone this repository, change the permission execution of pve-cigen file.
 
 ```bash
 git clone https://github.com/luizcarlosk2/pve-cigen.git
 chmod 0755 pve-cigen/pve-cigen.sh
 echo "alias pve-cigen=$(echo "$PWD""/pve-cigen/./pve-cigen.sh")" >> ~/.bashrc # or .zshrc
+source ~/.bashrc # or .zshrc
+```
+
+Create a path for the qcow images or use any path used by proxmox (the script uses the `/var/lib/vz/template/qcow/`):
+
+```bash
+mkdir -p /var/lib/vz/template/qcow/
+```
+
+Download the generic cloud image from the distro repository (eg: Debian 11) to specified folder:
+
+```bash
+wget https://cloud.debian.org/images/cloud/bullseye/latest/debian-11-generic-amd64.qcow2 -P /var/lib/vz/template/qcow/
 ```
 
 ## Usage
