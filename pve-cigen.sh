@@ -10,8 +10,11 @@ LVMTHIN="$(cat /etc/pve/storage.cfg | grep lvmthin | cut -d ":" -f2 | sed 's/ //
 # Default path where qcow files are stored
 DEFAULT_CLOUDIMG_DIR="/var/lib/vz/template/qcow/"
 
+# Get script absolute path location
+BASH_DIR=$(dirname $(readlink -f ${BASH_SOURCE:-$0}))
+
 # Import modules to check the syntax
-. modules/check_syntax.sh
+. "$BASH_DIR"/modules/check_syntax.sh
 
 help(){
 	# Help printout
